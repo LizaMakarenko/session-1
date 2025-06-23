@@ -53,7 +53,7 @@ public static void main(String[] args) {
                 "Вы можете задать его:" +
                 "как параметр: JSCHOOl1_COUNT=;" +
                 "как системную настройку: JSCHOOl1_COUNT=;" +
-                "как переменную окружения: export JSCHOOl1_COUNT=;" +
+                "как переменную окружения: JSCHOOl1_COUNT=;" +
                 "в файле, путь к которому задан через переменную окружения JSCHOOL1_PROPERTIES_FILE.");
     }
 }
