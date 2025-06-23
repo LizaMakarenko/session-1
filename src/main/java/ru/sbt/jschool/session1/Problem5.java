@@ -1,7 +1,5 @@
 package ru.sbt.jschool.session1;
 
-import javax.swing.*;
-
 public class Problem5 {
     public static long binaryToDec(String binary) {
         return Long.parseLong(binary, 2);
