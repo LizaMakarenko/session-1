@@ -15,7 +15,7 @@ public class Problem5 {
                 long decimal = binaryToDec(arg);
                 System.out.println(arg + " →  " + decimal);
             } catch (NumberFormatException e) {
-                System.out.println("Ошибка:" + arg);
+                System.out.println("Ошибка: " + arg + " не является допустимым двоичным числом");
             }
         }
     }
