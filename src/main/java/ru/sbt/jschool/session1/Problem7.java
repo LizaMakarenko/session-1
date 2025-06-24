@@ -1,27 +1,33 @@
 package ru.sbt.jschool.session1;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Problem7 {
-    public static long[] intersection(long[] arr1, long[] arr2){
-        ArrayList<Long> list = new ArrayList<>();
-        for (long num1 : arr1) {
-            for (long num2 : arr2) {
-                if (num1 == num2 && !list.contains(num1)) {
-                    list.add(num1);
+    public static long[] intersection(long[] arr1, long[] arr2) {
+        Set<Long> list1 = new HashSet<>();
+        Set<Long> resultSet = new HashSet<>();
 
-                }
+        for (long num : arr1) {
+            list1.add(num);
+        }
+
+        for (long num : arr2) {
+            if (list1.contains(num)) {
+                resultSet.add(num);
             }
         }
-        long[] result = new long[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            result[i] = list.get(i);
+        long[] result = new long[resultSet.size()];
+        int i = 0;
+        for (Long num : resultSet) {
+            result[i++] = num;
         }
         return result;
     }
     public static void main(String[] args) {
-        if (args.length < 2) {
-            System.out.println("Введите два массива значений(через запятую)");
+        if (args.length <2 ) {
+            System.err.println("Введите два массива(через запятую)");
             return;
         }
         String[] first = args[0].split(",");
@@ -35,7 +41,7 @@ public class Problem7 {
             arr2[i] = Long.parseLong(second[i]);
         }
         long[] intersection = intersection(arr1, arr2);
-        System.out.println("Общие элементы массивов");
+        System.out.println("Общие элементы массивов:");
         for (long num : intersection) {
             System.out.println(num);
         }
